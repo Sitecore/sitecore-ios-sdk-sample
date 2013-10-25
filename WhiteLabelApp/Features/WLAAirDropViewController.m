@@ -20,9 +20,9 @@
 -(void)buildUI
 {
     UIButton *dropButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 50, 200, 50)
-                                                           title:@"Drop"
-                                                          target:self
-                                                        selector:@selector(readImageAndShare:)];
+                                                          title:NSLocalizedString(@"Drop", nil)
+                                                         target:self
+                                                       selector:@selector(readImageAndShare:)];
     [self.view addSubview:dropButton];
 }
 
@@ -53,7 +53,7 @@
 {
     if (!image)
     {
-        [WLAAlertsHelper showMessageAlertWithText:@"Image wasn't received from the server"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Image wasn't received from the server", nil)];
         return;
     }
     

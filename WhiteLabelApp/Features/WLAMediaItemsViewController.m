@@ -45,8 +45,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self->_readingAlert = [[UIAlertView alloc] initWithTitle:@"Alert"
-                                                    message:@"image data processing, please wait"
+    self->_readingAlert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Alert", nil)
+                                                    message:NSLocalizedString(@"image data processing, please wait", nil)
                                                    delegate:nil
                                           cancelButtonTitle:nil
                                           otherButtonTitles:nil];
@@ -70,13 +70,13 @@
     [self.view addSubview:self->_progressView];
     
     self->_createButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 40, 130, 50)
-                                                         title:@"Upload image"
+                                                         title:NSLocalizedString(@"Upload image", nil)
                                                         target:self
                                                       selector:@selector(createMediaItem)];
     [self.view addSubview:self->_createButton];
     
     self->_cancelButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(160, 40, 130, 50)
-                                                         title:@"Cancel"
+                                                         title:NSLocalizedString(@"Cancel", nil)
                                                         target:self
                                                       selector:@selector(cancelUploading)];
     [self.view addSubview:self->_cancelButton];
@@ -95,7 +95,7 @@
 {
     if (_uploadingIsInProgress)
     {
-       [WLAAlertsHelper showMessageAlertWithText:@"Uploading is in progress now"];
+       [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Uploading is in progress now", nil)];
         return;
     }
     
@@ -104,7 +104,7 @@
     SCCancelAsyncOperationHandler cancelCallback = ^void(BOOL isActionTerminated)
     {
         self->_cancelOperation = nil;
-        [WLAAlertsHelper showMessageAlertWithText:@"Image uploading was canceled!"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Image uploading was canceled!", nil)];
         [self->_progressView setProgress:0.f];
         
         self->_uploadingIsInProgress = NO;
@@ -118,7 +118,7 @@
         if (error)
             [WLAAlertsHelper showErrorAlertWithError:error];
         else
-            [WLAAlertsHelper showMessageAlertWithText:@"Image uploaded successfully"];
+            [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Image uploaded successfully", nil)];
         
         self->_uploadingIsInProgress = NO;
     };
@@ -152,7 +152,7 @@
 {
     if (!self->_cancelOperation)
     {
-        [WLAAlertsHelper showMessageAlertWithText:@"Start uploading first"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Start uploading first", nil)];
         return;
     }
     

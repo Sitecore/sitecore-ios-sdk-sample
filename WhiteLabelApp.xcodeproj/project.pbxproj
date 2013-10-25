@@ -63,6 +63,7 @@
 		78CD7891181695F60046EA1F /* WLAPathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD7890181695F60046EA1F /* WLAPathHelper.m */; };
 		78CD78CD1816A5270046EA1F /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78CD78CC1816A5270046EA1F /* large_image.jpg */; };
 		78F649CC181A627F0091136F /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F649CB181A627F0091136F /* SitecoreMobileSDK.framework */; };
+		78F64A04181AB9C70091136F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78F64A06181AB9C70091136F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,7 @@
 		78CD78C71816A3590046EA1F /* imagesSourceAndLicenceInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = imagesSourceAndLicenceInfo; sourceTree = "<group>"; };
 		78CD78CC1816A5270046EA1F /* large_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = large_image.jpg; sourceTree = "<group>"; };
 		78F649CB181A627F0091136F /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		78F64A08181AB9D90091136F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 			children = (
 				7825D71B1805835D009030B5 /* WhiteLabelAppTests-Info.plist */,
 				7825D71C1805835D009030B5 /* InfoPlist.strings */,
+				78F64A06181AB9C70091136F /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F64A04181AB9C70091136F /* Localizable.strings in Resources */,
 				7825D70D1805835D009030B5 /* Images.xcassets in Resources */,
 				7825D7021805835D009030B5 /* Main_iPhone.storyboard in Resources */,
 				7825D6F91805835D009030B5 /* InfoPlist.strings in Resources */,
@@ -537,6 +541,14 @@
 				7825D71D1805835D009030B5 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		78F64A06181AB9C70091136F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78F64A08181AB9D90091136F /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

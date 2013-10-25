@@ -42,44 +42,44 @@
 -(void)buildUI
 {
     self->_readByPathItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 10, 130, 50)
-                                                                 title:@"Item by path"
+                                                                 title:NSLocalizedString(@"Item by path", nil)
                                                                 target:self
                                                               selector:@selector(readItemByPath)];
     [self.view addSubview: self->_readByPathItemButton];
     
     self->_readByIdItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(160, 10, 130, 50)
-                                                               title:@"Item by id"
+                                                               title:NSLocalizedString(@"Item by id", nil)
                                                               target:self
                                                             selector:@selector(readItemById)];
     [self.view addSubview: self->_readByIdItemButton];
     
-    self->_readChildsButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 70, 200, 50)
-                                                             title:@"Read home item childrens"
+    self->_readChildsButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 70, 270, 50)
+                                                             title:NSLocalizedString(@"Read home item childrens", nil)
                                                             target:self
                                                           selector:@selector(readChildrens)];
     [self.view addSubview: self->_readChildsButton];
     
-    self->_addItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 130, 200, 50)
-                                                          title:@"Add item"
+    self->_addItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 130, 270, 50)
+                                                          title:NSLocalizedString(@"Add item", nil)
                                                          target:self
                                                        selector:@selector(createItem)];
     [self.view addSubview: self->_addItemButton];
     
-    self->_removeItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 190, 200, 50)
-                                                             title:@"Remove item"
+    self->_removeItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 190, 270, 50)
+                                                             title:NSLocalizedString(@"Remove item", nil)
                                                             target:self
                                                           selector:@selector(deleteItem)];
     [self.view addSubview: self->_removeItemButton];
     
     {
         self->_editItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 250, 150, 50)
-                                                               title:@"Change item's title"
+                                                               title:NSLocalizedString(@"Change item's title", nil)
                                                               target:self
                                                             selector:@selector(editItem)];
         [self.view addSubview: self->_editItemButton];
         
-        self->_titleField = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(180, 250, 100, 50)
-                                                        placeholder:@"type title here"
+        self->_titleField = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(180, 250, 110, 50)
+                                                        placeholder:NSLocalizedString(@"type title here", nil)
                                                                text:@"New Title"];
         self->_titleField.delegate = self;
         [self.view addSubview: self->_titleField];
@@ -130,7 +130,7 @@
     }
     else
     {
-        NSString *message = [NSString stringWithFormat:@"Item %@ was successfully read", item.displayName];
+        NSString *message = [NSString stringWithFormat:NSLocalizedString(@"Item %@ was successfully read", nil), item.displayName];
         [WLAAlertsHelper showMessageAlertWithText:message];
     }
 }
@@ -159,14 +159,14 @@
                     [names appendFormat:@"%@, ", item.displayName];
                 }
                 
-                NSString *message = [NSString stringWithFormat:@"The Home item Childrens: %@", names];
+                NSString *message = [NSString stringWithFormat:NSLocalizedString(@"The Home item Childrens: %@", nil), names];
                 [WLAAlertsHelper showMessageAlertWithText:message];
             }
         });
     }
     else
     {
-        [WLAAlertsHelper showMessageAlertWithText:@"The Home item is not in cache yet"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"The Home item is not in cache yet", nil)];
     }
 }
 
@@ -188,7 +188,7 @@
          if (item)
          {
              self->_createdItem = item;
-             [WLAAlertsHelper showMessageAlertWithText:@"Item was successfully created"];
+             [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Item was successfully created", nil)];
          }
          else
          {
@@ -202,7 +202,7 @@
 {
     if (!_createdItem)
     {
-        [WLAAlertsHelper showMessageAlertWithText:@"Create item first"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Create item first", nil)];
         return;
     }
     
@@ -211,7 +211,7 @@
        if (!error)
        {
            self->_createdItem = nil;
-           [WLAAlertsHelper showMessageAlertWithText:@"Item was successfully removed"];
+           [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Item was successfully removed", nil)];
        }
        else
        {
@@ -224,13 +224,13 @@
 {
     if (!_createdItem)
     {
-        [WLAAlertsHelper showMessageAlertWithText:@"Create item first"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Create item first", nil)];
         return;
     }
     
     if (self->_titleField.text.length < 1)
     {
-        [WLAAlertsHelper showMessageAlertWithText:@"Type new title, please"];
+        [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Type new title, please", nil)];
         return;
     }
     
@@ -243,7 +243,7 @@
         if (!error)
         {
             self->_createdItem = editedItem;
-            [WLAAlertsHelper showMessageAlertWithText:@"Title was successfully changed"];
+            [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Title was successfully changed", nil)];
         }
         else
         {

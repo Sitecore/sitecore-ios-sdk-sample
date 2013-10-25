@@ -22,22 +22,22 @@
 -(void)buildUI
 {
     self->_userName = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 20, 200, 50)
-                                           placeholder:@"domain\\login"
-                                                  text:WLACreatorUser];
+                                                  placeholder:NSLocalizedString(@"domain\\login", nil)
+                                                         text:WLACreatorUser];
     [self.view addSubview:self->_userName];
     
     self->_password = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 80, 200, 50)
-                                           placeholder:@"password"
-                                                  text:WLACreatorPassword];
+                                                  placeholder:NSLocalizedString(@"password", nil)
+                                                         text:WLACreatorPassword];
     [self.view addSubview:self->_password];
     
     self->_site = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 140, 200, 50)
-                                                  placeholder:@"site"
-                                                         text:WLASitecoreShellSite];
+                                              placeholder:NSLocalizedString(@"site", nil)
+                                                     text:WLASitecoreShellSite];
     [self.view addSubview:self->_site];
     
     UIButton *correctAuthButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 220, 200, 50)
-                                                                 title:@"Try authentication"
+                                                                 title:NSLocalizedString(@"Try authentication", nil)
                                                                 target:self
                                                               selector:@selector(tryAuthRequest)];
     [self.view addSubview:correctAuthButton];
@@ -60,11 +60,11 @@
         
         if (blockResult)
         {
-            message = @"This user is exists";
+            message = NSLocalizedString(@"This user is exists", nil);
         }
         else
         {
-            message = @"This user does not exists";
+            message = NSLocalizedString(@"This user does not exists", nil);
         }
         
         [WLAAlertsHelper showMessageAlertWithText:message];

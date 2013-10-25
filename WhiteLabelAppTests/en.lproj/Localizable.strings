@@ -1,0 +1,43 @@
+/* 
+  Localizable.strings
+  WhiteLabelApp
+
+  Created by Igor on 10/25/13.
+  Copyright (c) 2013 Sitecore. All rights reserved.
+*/
+"Message" = "Message";
+"Ok" = "Ok";
+"Error" = "Error";
+"Message" = "Message";
+"Alert" = "Alert";
+"domain\\login" = "domain\\login";
+"password" = "password";
+"site" = "site";
+"Try authentication" = "Try authentication";
+"This user is exists" = "This user is exists";
+"This user does not exists" = "This user does not exists";
+"Drop" = "Drop";
+"Image wasn't received from the server" = "Image wasn't received from the server";
+"Item by path" = "Item by path";
+"Item by id" = "Item by id";
+"Read home item childrens" = "Read home item childrens";
+"Add item" = "Add item";
+"Remove item" = "Remove item";
+"Change item's title" = "Change item's title";
+"type title here" = "type title here";
+"Item %@ was successfully read" = "Item %@ was successfully read";
+"The Home item Childrens: %@" = "The Home item Childrens: %@";
+"The Home item is not in cache yet" = "The Home item is not in cache yet";
+"Item was successfully created" = "Item was successfully created";
+"Create item first" = "Create item first";
+"Item was successfully removed" = "Item was successfully removed";
+"Create item first" = "Create item first";
+"Type new title, please" = "Type new title, please";
+"Title was successfully changed" = "Title was successfully changed";
+"image data processing, please wait" = "image data processing, please wait";
+"Upload image" = "Upload image";
+"Cancel" = "Cancel";
+"Uploading is in progress now" = "Uploading is in progress now";
+"Image uploading was canceled!" = "Image uploading was canceled!";
+"Image uploaded successfully" = "Image uploaded successfully";
+"Start uploading first" = "Start uploading first";

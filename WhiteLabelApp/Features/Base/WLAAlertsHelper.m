@@ -12,20 +12,20 @@
 
 +(void)showMessageAlertWithText:(NSString *)text
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Message", nil)
                                                     message:text
                                                    delegate:nil
-                                          cancelButtonTitle:@"Ok"
+                                          cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                           otherButtonTitles:nil];
     [alert show];
 }
 
 +(void)showErrorAlertWithError:(NSError *)error
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error"
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
                                                     message:[error localizedDescription]
                                                    delegate:nil
-                                          cancelButtonTitle:@"Ok"
+                                          cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                           otherButtonTitles:nil];
     [alert show];
 }
