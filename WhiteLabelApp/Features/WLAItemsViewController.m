@@ -41,48 +41,48 @@
 
 -(void)buildUI
 {
-    _readByPathItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 10, 130, 50)
-                                                   title:@"Item by path"
-                                                  target:self
-                                                selector:@selector(readItemByPath)];
-    [self.view addSubview:_readByPathItemButton];
+    self->_readByPathItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 10, 130, 50)
+                                                                 title:@"Item by path"
+                                                                target:self
+                                                              selector:@selector(readItemByPath)];
+    [self.view addSubview: self->_readByPathItemButton];
     
-    _readByIdItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(160, 10, 130, 50)
-                                                      title:@"Item by id"
-                                                     target:self
-                                                   selector:@selector(readItemById)];
-    [self.view addSubview:_readByIdItemButton];
+    self->_readByIdItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(160, 10, 130, 50)
+                                                               title:@"Item by id"
+                                                              target:self
+                                                            selector:@selector(readItemById)];
+    [self.view addSubview: self->_readByIdItemButton];
     
-    _readChildsButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 70, 200, 50)
-                                                      title:@"Read home item childrens"
-                                                     target:self
-                                                   selector:@selector(readChildrens)];
-    [self.view addSubview:_readChildsButton];
+    self->_readChildsButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 70, 200, 50)
+                                                             title:@"Read home item childrens"
+                                                            target:self
+                                                          selector:@selector(readChildrens)];
+    [self.view addSubview: self->_readChildsButton];
     
-    _addItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 130, 200, 50)
-                                                   title:@"Add item"
-                                                  target:self
-                                                selector:@selector(createItem)];
-    [self.view addSubview:_addItemButton];
+    self->_addItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 130, 200, 50)
+                                                          title:@"Add item"
+                                                         target:self
+                                                       selector:@selector(createItem)];
+    [self.view addSubview: self->_addItemButton];
     
-    _removeItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 190, 200, 50)
-                                                   title:@"Remove item"
-                                                  target:self
-                                                selector:@selector(deleteItem)];
-    [self.view addSubview:_removeItemButton];
+    self->_removeItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 190, 200, 50)
+                                                             title:@"Remove item"
+                                                            target:self
+                                                          selector:@selector(deleteItem)];
+    [self.view addSubview: self->_removeItemButton];
     
     {
-        _editItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 250, 150, 50)
-                                                          title:@"Change item's title"
-                                                         target:self
-                                                       selector:@selector(editItem)];
-        [self.view addSubview:_editItemButton];
+        self->_editItemButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 250, 150, 50)
+                                                               title:@"Change item's title"
+                                                              target:self
+                                                            selector:@selector(editItem)];
+        [self.view addSubview: self->_editItemButton];
         
-        _titleField = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(180, 250, 100, 50)
-                                                 placeholder:@"type title here"
-                                                        text:@"New Title"];
-        _titleField.delegate = self;
-        [self.view addSubview:_titleField];
+        self->_titleField = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(180, 250, 100, 50)
+                                                        placeholder:@"type title here"
+                                                               text:@"New Title"];
+        self->_titleField.delegate = self;
+        [self.view addSubview: self->_titleField];
     }
     
 }

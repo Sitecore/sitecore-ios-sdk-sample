@@ -14,50 +14,50 @@
 
 @implementation WLAMediaItemsViewController
 {
-    SCApiContext *apiContext;
-    SCCancelAsyncOperation cancelOperation;
-    SCItem* media_item;
+    SCApiContext *_apiContext;
+    SCCancelAsyncOperation _cancelOperation;
+    SCItem* _media_item;
     
-    UIButton *createButton;
-    UIProgressView *progressView;
-    UIButton *cancelButton;
+    UIButton *_createButton;
+    UIProgressView *_progressView;
+    UIButton *_cancelButton;
     
-    BOOL uploadingIsInProgress;
+    BOOL _uploadingIsInProgress;
     
-    NSData *imageData;
+    NSData *_imageData;
     
-    UIAlertView *readingAlert;
+    UIAlertView *_readingAlert;
 }
 
 -(void)viewDidLoad
 {
     [super viewDidLoad];
 
-    uploadingIsInProgress = NO;
+     self->_uploadingIsInProgress = NO;
     
-    self->apiContext = [SCApiContext contextWithHost:WLAWebApiHostName
+    self->_apiContext = [SCApiContext contextWithHost:WLAWebApiHostName
                                                 login:WLAUserName
                                              password:WLAUserPassword];
 
-    self->apiContext.defaultDatabase = @"web";
-    self->apiContext.defaultSite = WLASitecoreShellSite;
+    self->_apiContext.defaultDatabase = @"web";
+    self->_apiContext.defaultSite = WLASitecoreShellSite;
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    self->readingAlert = [[UIAlertView alloc] initWithTitle:@"Alert"
+    self->_readingAlert = [[UIAlertView alloc] initWithTitle:@"Alert"
                                                     message:@"image data processing, please wait"
                                                    delegate:nil
                                           cancelButtonTitle:nil
                                           otherButtonTitles:nil];
-    [self->readingAlert show ];
+    [self->_readingAlert show ];
     
     
     void(^readImageBlock)( void ) = ^void()
     {
         NSString *filePath = [[NSBundle mainBundle] pathForResource:[self imageFileName] ofType:@"jpg"];
-        self->imageData = [NSData dataWithContentsOfFile:filePath];
-        [self->readingAlert dismissWithClickedButtonIndex:0 animated:YES];
+        self->_imageData = [NSData dataWithContentsOfFile:filePath];
+        [self->_readingAlert dismissWithClickedButtonIndex:0 animated:YES];
     };
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), readImageBlock );
 }
@@ -65,21 +65,21 @@
 -(void)buildUI
 {
     
-    progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-    [progressView setFrame:CGRectMake(10, 20, self.view.bounds.size.width - 20, 20)];
-    [self.view addSubview:progressView];
+    self->_progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    [self->_progressView setFrame:CGRectMake(10, 20, self.view.bounds.size.width - 20, 20)];
+    [self.view addSubview:self->_progressView];
     
-    createButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 40, 130, 50)
-                                                  title:@"Upload image"
-                                                 target:self
-                                               selector:@selector(createMediaItem)];
-    [self.view addSubview:createButton];
+    self->_createButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 40, 130, 50)
+                                                         title:@"Upload image"
+                                                        target:self
+                                                      selector:@selector(createMediaItem)];
+    [self.view addSubview:self->_createButton];
     
-    cancelButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(160, 40, 130, 50)
-                                                  title:@"Cancel"
-                                                 target:self
-                                               selector:@selector(cancelUploading)];
-    [self.view addSubview:cancelButton];
+    self->_cancelButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(160, 40, 130, 50)
+                                                         title:@"Cancel"
+                                                        target:self
+                                                      selector:@selector(cancelUploading)];
+    [self.view addSubview:self->_cancelButton];
 }
 
 #pragma mark -----------------------------------------
@@ -93,34 +93,34 @@
 
 -(void)createMediaItem
 {
-    if (uploadingIsInProgress)
+    if (_uploadingIsInProgress)
     {
        [WLAAlertsHelper showMessageAlertWithText:@"Uploading is in progress now"];
         return;
     }
     
-    uploadingIsInProgress = YES;
+    self->_uploadingIsInProgress = YES;
     
     SCCancelAsyncOperationHandler cancelCallback = ^void(BOOL isActionTerminated)
     {
-        self->cancelOperation = nil;
+        self->_cancelOperation = nil;
         [WLAAlertsHelper showMessageAlertWithText:@"Image uploading was canceled!"];
-        [self->progressView setProgress:0.f];
+        [self->_progressView setProgress:0.f];
         
-        uploadingIsInProgress = NO;
+        self->_uploadingIsInProgress = NO;
     };
     
     SCDidFinishAsyncOperationHandler doneCallback = ^(SCItem* item, NSError* error)
     {
-        self->cancelOperation = nil;
-        self->media_item = item;
+        self->_cancelOperation = nil;
+        self->_media_item = item;
         
         if (error)
             [WLAAlertsHelper showErrorAlertWithError:error];
         else
             [WLAAlertsHelper showMessageAlertWithText:@"Image uploaded successfully"];
         
-        uploadingIsInProgress = NO;
+        self->_uploadingIsInProgress = NO;
     };
     
     SCAsyncOperationProgressHandler progressCallback = ^(id<SCUploadProgress> progressInfo)
@@ -128,7 +128,7 @@
         if ([progressInfo respondsToSelector:@selector(progress)])
         {
             NSLog(@"-=== progress:%.2f%%", ([progressInfo progress].floatValue * 100));
-            [self->progressView setProgress:[progressInfo progress].floatValue];
+            [self->_progressView setProgress:[progressInfo progress].floatValue];
         }
     };
 
@@ -137,26 +137,26 @@
     request.fileName      = [NSString stringWithFormat:@"%@.jpg", [self imageFileName]];
     request.itemName      = @"TestMediaItem";
     request.itemTemplate  = @"System/Media/Unversioned/Image";
-    request.mediaItemData = self->imageData;
+    request.mediaItemData = self->_imageData;
     request.fieldNames    = [NSSet new];
     request.contentType   = @"image/jpg";
     request.folder        = @"/WhiteLabel/BigImageTestData";
     
-    SCExtendedAsyncOp loader = [self->apiContext.extendedApiContext mediaItemCreatorWithRequest:request];
+    SCExtendedAsyncOp loader = [self->_apiContext.extendedApiContext mediaItemCreatorWithRequest:request];
     
-    self->cancelOperation = loader(progressCallback, cancelCallback, doneCallback);
+    self->_cancelOperation = loader(progressCallback, cancelCallback, doneCallback);
 
 }
 
 -(void)cancelUploading
 {
-    if (!self->cancelOperation)
+    if (!self->_cancelOperation)
     {
         [WLAAlertsHelper showMessageAlertWithText:@"Start uploading first"];
         return;
     }
     
-    self->cancelOperation(YES);
+    self->_cancelOperation(YES);
 }
 
 @end
