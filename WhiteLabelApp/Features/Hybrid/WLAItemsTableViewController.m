@@ -28,6 +28,8 @@
     self->context = [SCApiContext contextWithHost:WLAWebApiHostName
                                             login:WLAUserName
                                          password:WLAUserPassword];
+    self->context.defaultDatabase = @"web";
+    self->context.defaultSite = WLASitecoreShellSite;
     [self downloadItemsList];
 }
 
