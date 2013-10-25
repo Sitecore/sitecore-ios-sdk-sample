@@ -30,8 +30,9 @@
                          target:(id)target
                        selector:(SEL)selector
 {
-    UIButton *result = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIButton *result = [UIButton buttonWithType:UIButtonTypeCustom];
     [result setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [result setTitleColor:[UIColor blackColor] forState:UIControlStateHighlighted];
     [result setBackgroundColor:[UIColor grayColor]];
     
     [result setTitle:title forState:UIControlStateNormal];
