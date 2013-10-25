@@ -16,21 +16,27 @@
 {
     UITextField *_userName;
     UITextField *_password;
+    UITextField *_site;
 }
 
 -(void)buildUI
 {
-    _userName = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 100, 200, 50)
-                                           placeholder:WLACreatorUser
+    self->_userName = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 20, 200, 50)
+                                           placeholder:@"domain\\login"
                                                   text:WLACreatorUser];
-    [self.view addSubview:_userName];
+    [self.view addSubview:self->_userName];
     
-    _password = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 170, 200, 50)
-                                           placeholder:WLACreatorPassword
+    self->_password = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 80, 200, 50)
+                                           placeholder:@"password"
                                                   text:WLACreatorPassword];
-    [self.view addSubview:_password];
+    [self.view addSubview:self->_password];
     
-    UIButton *correctAuthButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 240, 200, 50)
+    self->_site = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 140, 200, 50)
+                                                  placeholder:@"site"
+                                                         text:WLASitecoreShellSite];
+    [self.view addSubview:self->_site];
+    
+    UIButton *correctAuthButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 220, 200, 50)
                                                                  title:@"Try authentication"
                                                                 target:self
                                                               selector:@selector(tryAuthRequest)];
@@ -42,10 +48,10 @@
 -(void)tryAuthRequest
 {
     SCApiContext* context = [SCApiContext contextWithHost:WLAWebApiHostNameWithAuth
-                                                    login:_userName.text
-                                                 password:_password.text];
+                                                    login:self->_userName.text
+                                                 password:self->_password.text];
     
-    SCAsyncOp authOp = [context credentialsCheckerForSite:WLASitecoreShellSite];
+    SCAsyncOp authOp = [context credentialsCheckerForSite:self->_site.text];
     
 
     SCAsyncOpResult onAuthCompleted = ^void(NSNull* blockResult, NSError* blockError)
@@ -54,11 +60,11 @@
         
         if (blockResult)
         {
-            message = @"This user is exist";
+            message = @"This user is exists";
         }
         else
         {
-            message = @"This user is not exist";
+            message = @"This user does not exists";
         }
         
         [WLAAlertsHelper showMessageAlertWithText:message];
