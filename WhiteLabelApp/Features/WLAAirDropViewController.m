@@ -51,6 +51,11 @@
 
 -(void)shareImage:(UIImage *)image
 {
+    if (!image)
+    {
+        [WLAAlertsHelper showMessageAlertWithText:@"Image wasn't received from the server"];
+        return;
+    }
     
     UIActivityViewController* vc = [[UIActivityViewController alloc]
                                     initWithActivityItems:@[image] applicationActivities:nil];
