@@ -36,7 +36,7 @@
 {
     if (!self->_featurePath)
     {
-        self->_featurePath = [WLAPathHelper wlaPathToItem:@"SwipePage1"];
+        self->_featurePath = [WLAPathHelper wlaPathToItem:@"SwipePages/SwipePage1.aspx"];
     }
     
     [super viewDidLoad];
