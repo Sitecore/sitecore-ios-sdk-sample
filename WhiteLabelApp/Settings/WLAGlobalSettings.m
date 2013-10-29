@@ -1,7 +1,7 @@
 #import "WLAGlobalSettings.h"
 
-//NSString* const WLAWebApiHostName = @"http://mobiledev1ua1.dk.sitecore.net:89";
-NSString* const WLAWebApiHostName = @"http://mobiledev1ua1.dk.sitecore.net:666";
+//#error  posible error, correct settings shoul be used!
+NSString* const WLAWebApiHostName = @"http://mobiledev1ua1.dk.sitecore.net:710";
 NSString* const WLASitecoreShellSite = @"/sitecore/shell";
 
 NSString* const WLAWebApiHostNameWithAuth = @"http://mobiledev1ua1.dk.sitecore.net:9999";
