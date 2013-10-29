@@ -2,7 +2,7 @@ Installing Sample Application package
 ======================================
 
 ### Prerequisites:
- * Sitecore CMS 6.5 or later with installed Sitecore Item Web API 1.0 
+ * Sitecore CMS 6.6 or later with installed Sitecore Item Web API 1.0 
 
 ## Installation
 
