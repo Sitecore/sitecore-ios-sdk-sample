@@ -14,7 +14,7 @@ To install the package, use the Sitecore Installation Wizard. You can access the
  * via Sitecore Control Panel: Administration » Install a Package.
 
  
- After you install the package, in the web.config file, the ```xml<xslExtensions>``` section, add the following string:
+ After you install the package, in the web.config file, the ```<xslExtensions>``` section, add the following string:
 
 ```xml	 
  <extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
