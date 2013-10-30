@@ -23,12 +23,12 @@
 {
     self->_userName = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 20, 200, 50)
                                                   placeholder:NSLocalizedString(@"domain\\login", nil)
-                                                         text:WLACreatorUser];
+                                                         text:WLAUserName];
     [self.view addSubview:self->_userName];
     
     self->_password = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 80, 200, 50)
                                                   placeholder:NSLocalizedString(@"password", nil)
-                                                         text:WLACreatorPassword];
+                                                         text:WLAUserPassword];
     [self.view addSubview:self->_password];
     
     self->_site = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 140, 200, 50)
@@ -47,7 +47,7 @@
 
 -(void)tryAuthRequest
 {
-    SCApiContext* context = [SCApiContext contextWithHost:WLAWebApiHostNameWithAuth
+    SCApiContext* context = [SCApiContext contextWithHost:WLAWebApiHostName
                                                     login:self->_userName.text
                                                  password:self->_password.text];
     
