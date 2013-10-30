@@ -15,5 +15,26 @@ To install the package, use the Sitecore Installation Wizard. You can access the
 
  
  After you install the package, in the web.config file, the <xslExtensions> section, add the following string:
-	 
- \<extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
+
+```xml	 
+ <extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
+```
+
+## WebApi settings
+
+In Sitecore.ItemWebApi.config add “shell” site and set security settings for the sites as following:
+
+```xml
+<site name="website">
+        <patch:attribute name="itemwebapi.mode">AdvancedSecurity</patch:attribute>
+        <patch:attribute name="itemwebapi.access">ReadWrite</patch:attribute>
+        <patch:attribute name="itemwebapi.allowanonymousaccess">false</patch:attribute>
+</site>
+```	
+```xml
+<site name="shell">
+        <patch:attribute name="itemwebapi.mode">AdvancedSecurity</patch:attribute>
+        <patch:attribute name="itemwebapi.access">ReadWrite</patch:attribute>
+        <patch:attribute name="itemwebapi.allowanonymousaccess">false</patch:attribute>
+</site>
+```
