@@ -58,8 +58,7 @@
              }
              else
              {
-                 NSLog(@"error:%@", error);
-                 [_qrcodeView startCapture];
+                 [WLAAlertsHelper showMessageAlertWithText:resultString];
              }
          });
     }
