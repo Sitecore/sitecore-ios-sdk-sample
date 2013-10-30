@@ -54,7 +54,7 @@
     [self.view addSubview: self->_readByIdItemButton];
     
     self->_readChildsButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 70, 270, 50)
-                                                             title:NSLocalizedString(@"Read home item childrens", nil)
+                                                             title:NSLocalizedString(@"Read home item children", nil)
                                                             target:self
                                                           selector:@selector(readChildrens)];
     [self.view addSubview: self->_readChildsButton];
@@ -188,7 +188,10 @@
          if (item)
          {
              self->_createdItem = item;
-             [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Item was successfully created", nil)];
+             NSMutableString *message = [NSMutableString stringWithString:NSLocalizedString(@"Item was successfully created", nil)];
+             [message appendFormat:@"\nitem path: %@", item.path];
+             [message appendFormat:@"\nitem name: %@", item.displayName];
+             [WLAAlertsHelper showMessageAlertWithText:message];
          }
          else
          {
@@ -210,8 +213,11 @@
     {
        if (!error)
        {
+           NSMutableString *message = [NSMutableString stringWithString:NSLocalizedString(@"Item was successfully removed", nil)];
+           [message appendFormat:@"\nitem path: %@", self->_createdItem.path];
+           [message appendFormat:@"\nitem name: %@", self->_createdItem.displayName];
            self->_createdItem = nil;
-           [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Item was successfully removed", nil)];
+           [WLAAlertsHelper showMessageAlertWithText:message];
        }
        else
        {
