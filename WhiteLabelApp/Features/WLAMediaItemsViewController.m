@@ -116,9 +116,16 @@
         self->_media_item = item;
         
         if (error)
+        {
             [WLAAlertsHelper showErrorAlertWithError:error];
+        }
         else
-            [WLAAlertsHelper showMessageAlertWithText:NSLocalizedString(@"Image uploaded successfully", nil)];
+        {
+            NSMutableString *message = [NSMutableString stringWithString:NSLocalizedString(@"Image uploaded successfully", nil)];
+            [message appendFormat:@"\nitem path: %@", item.path];
+            [message appendFormat:@"\nitem name: %@", item.displayName];
+            [WLAAlertsHelper showMessageAlertWithText:message];
+        }
         
         self->_uploadingIsInProgress = NO;
     };
