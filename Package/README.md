@@ -19,7 +19,8 @@ To install the package, use the Sitecore Installation Wizard. You can access the
 ```xml	 
  <extension mode="on" type="Sitecore.XslHelpers.MobileExtensions, Sitecore.Mobile" namespace="http://www.sitecore.net/scmobile" />
 ```
-
+ Publish your site.
+ 
 ## Item Web Api settings
 
 In Sitecore.ItemWebApi.config add “shell” site and set security settings for the sites as following:
