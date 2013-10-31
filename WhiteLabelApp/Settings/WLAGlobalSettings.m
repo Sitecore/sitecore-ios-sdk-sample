@@ -1,6 +1,6 @@
 #import "WLAGlobalSettings.h"
 
-//#error  posible error, correct settings shoul be used!
+#error  posible error, correct settings shoul be used!
 NSString* const WLAWebApiHostName = @"<host>";
 NSString* const WLASitecoreShellSite = @"/sitecore/shell";
 
