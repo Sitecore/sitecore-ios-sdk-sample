@@ -40,3 +40,7 @@ SITECORE SHARED SOURCE LICENSE
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
  [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS/Mobile%20SDK%201,-d-,2%20for%20iOS/Documentation.aspx
  [4]: https://github.com/Sitecore/sitecore-ios-sdk
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Sitecore/sitecore-ios-sdk-sample/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
