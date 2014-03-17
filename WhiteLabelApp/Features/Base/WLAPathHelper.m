@@ -12,7 +12,9 @@
 
 +(NSString *)wlaPathToItem:(NSString *)item
 {
-    return [NSString stringWithFormat:@"%@%@", WLAWhiteLabelDataSourceRoot, item];
+    NSString *dsRoot = [WLAGlobalSettings sharedInstance].WLAWhiteLabelDataSourceRoot;
+    
+    return [NSString stringWithFormat:@"%@%@", dsRoot, item];
 }
 
 @end

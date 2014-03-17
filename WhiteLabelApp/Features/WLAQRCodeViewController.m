@@ -40,9 +40,12 @@
     if (resultString)
     {
         [_qrcodeView stopCapture];
-        SCApiContext* context = [SCApiContext contextWithHost:WLAWebApiHostName];
+        
+        NSString *hostPath = [WLAGlobalSettings sharedInstance].WLAWebApiHostName;
+        
+        SCApiSession* context = [SCApiSession sessionWithHost:hostPath];
     
-        [context imageLoaderForSCMediaPath:resultString](^(id result, NSError* error)
+        [context downloadResourceOperationForMediaPath:resultString](^(id result, NSError* error)
          {
              if (!error)
              {

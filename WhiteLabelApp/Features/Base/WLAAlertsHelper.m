@@ -23,11 +23,22 @@
 +(void)showErrorAlertWithError:(NSError *)error
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
-                                                    message:[error localizedDescription]
+                                                    message:NSLocalizedString([error localizedDescription], nil)
                                                    delegate:nil
                                           cancelButtonTitle:NSLocalizedString(@"Ok", nil)
                                           otherButtonTitles:nil];
     [alert show];
 }
+
++(void)showErrorAlertWithText:(NSString *)text
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", nil)
+                                                    message:text
+                                                   delegate:nil
+                                          cancelButtonTitle:NSLocalizedString(@"Ok", nil)
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
 
 @end

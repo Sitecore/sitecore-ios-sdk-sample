@@ -12,5 +12,6 @@
 
 +(void)showMessageAlertWithText:(NSString *)text;
 +(void)showErrorAlertWithError:(NSError *)error;
++(void)showErrorAlertWithText:(NSString *)text;
 
 @end

@@ -21,19 +21,23 @@
 
 -(void)buildUI
 {
+    NSString *userName = [WLAGlobalSettings sharedInstance].WLAUserName;
+    NSString *password = [WLAGlobalSettings sharedInstance].WLAUserPassword;
+    NSString *sitePath = [WLAGlobalSettings sharedInstance].WLASitecoreShellSite;
+    
     self->_userName = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 20, 200, 50)
                                                   placeholder:NSLocalizedString(@"domain\\login", nil)
-                                                         text:WLAUserName];
+                                                         text:userName];
     [self.view addSubview:self->_userName];
     
     self->_password = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 80, 200, 50)
                                                   placeholder:NSLocalizedString(@"password", nil)
-                                                         text:WLAUserPassword];
+                                                         text:password];
     [self.view addSubview:self->_password];
     
     self->_site = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 140, 200, 50)
                                               placeholder:NSLocalizedString(@"site", nil)
-                                                     text:WLASitecoreShellSite];
+                                                     text:sitePath];
     [self.view addSubview:self->_site];
     
     UIButton *correctAuthButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 220, 200, 50)
@@ -47,11 +51,13 @@
 
 -(void)tryAuthRequest
 {
-    SCApiContext* context = [SCApiContext contextWithHost:WLAWebApiHostName
+    NSString *hostPath = [WLAGlobalSettings sharedInstance].WLAWebApiHostName;
+    
+    SCApiSession* context = [SCApiSession sessionWithHost:hostPath
                                                     login:self->_userName.text
                                                  password:self->_password.text];
     
-    SCAsyncOp authOp = [context credentialsCheckerForSite:self->_site.text];
+    SCAsyncOp authOp = [context checkCredentialsOperationForSite:self->_site.text];
     
 
     SCAsyncOpResult onAuthCompleted = ^void(NSNull* blockResult, NSError* blockError)

@@ -52,7 +52,14 @@
 		78454398180E91AA0078395E /* WLAAirDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78454397180E91AA0078395E /* WLAAirDropViewController.m */; };
 		7845439B180EB65C0078395E /* WLASharingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7845439A180EB65C0078395E /* WLASharingViewController.m */; };
 		7859DB6E180ED83A000F9AD9 /* WLAQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7859DB6D180ED83A000F9AD9 /* WLAQRCodeViewController.m */; };
-		78ADAF761810278100C73D93 /* WLAItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78ADAF751810278100C73D93 /* WLAItemsViewController.m */; };
+		789015A318A6301F003D9F49 /* WLAItemsManipulationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015A218A6301F003D9F49 /* WLAItemsManipulationListViewController.m */; };
+		789015A618A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015A518A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.m */; };
+		789015B018A653A1003D9F49 /* WLAItemByPathViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015AF18A653A1003D9F49 /* WLAItemByPathViewController.m */; };
+		789015B318A653B0003D9F49 /* WLAItemByIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015B218A653B0003D9F49 /* WLAItemByIDViewController.m */; };
+		789015B618A653C0003D9F49 /* WLAItemChildrenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015B518A653C0003D9F49 /* WLAItemChildrenViewController.m */; };
+		789015B918A653D3003D9F49 /* WLAItemCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015B818A653D3003D9F49 /* WLAItemCreateViewController.m */; };
+		789015BC18A653DF003D9F49 /* WLAItemDeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015BB18A653DF003D9F49 /* WLAItemDeleteViewController.m */; };
+		789015F318A66565003D9F49 /* WLABaseItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 789015F218A66565003D9F49 /* WLABaseItemViewController.m */; };
 		78AE2D9E18113AF100FF116D /* WLAAlertsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AE2D9D18113AF100FF116D /* WLAAlertsHelper.m */; };
 		78AE2DA118117E1F00FF116D /* WLAMediaItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78AE2DA018117E1F00FF116D /* WLAMediaItemsViewController.m */; };
 		78BEC0EC180C0227007BFED5 /* WLABaseWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BEC0EB180C0227007BFED5 /* WLABaseWebViewController.m */; };
@@ -62,7 +69,10 @@
 		78BEC197180C3215007BFED5 /* WLAAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BEC196180C3215007BFED5 /* WLAAuthViewController.m */; };
 		78CD7891181695F60046EA1F /* WLAPathHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CD7890181695F60046EA1F /* WLAPathHelper.m */; };
 		78CD78CD1816A5270046EA1F /* large_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78CD78CC1816A5270046EA1F /* large_image.jpg */; };
-		78F649CC181A627F0091136F /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F649CB181A627F0091136F /* SitecoreMobileSDK.framework */; };
+		78CF10D218B260250050A664 /* WLASettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CF10D018B260250050A664 /* WLASettingsViewController.m */; };
+		78DDEE7E18D7211800DC81AD /* SitecoreMobileJavaScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DDEE7B18D7211800DC81AD /* SitecoreMobileJavaScript.framework */; };
+		78DDEE7F18D7211800DC81AD /* SitecoreMobileSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DDEE7C18D7211800DC81AD /* SitecoreMobileSDK.framework */; };
+		78DDEE8018D7211800DC81AD /* SitecoreMobileUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DDEE7D18D7211800DC81AD /* SitecoreMobileUI.framework */; };
 		78F64A04181AB9C70091136F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78F64A06181AB9C70091136F /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -137,8 +147,22 @@
 		7845439A180EB65C0078395E /* WLASharingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLASharingViewController.m; sourceTree = "<group>"; };
 		7859DB6C180ED83A000F9AD9 /* WLAQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAQRCodeViewController.h; sourceTree = "<group>"; };
 		7859DB6D180ED83A000F9AD9 /* WLAQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAQRCodeViewController.m; sourceTree = "<group>"; };
-		78ADAF741810278100C73D93 /* WLAItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemsViewController.h; sourceTree = "<group>"; };
-		78ADAF751810278100C73D93 /* WLAItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemsViewController.m; sourceTree = "<group>"; };
+		789015A118A6301F003D9F49 /* WLAItemsManipulationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemsManipulationListViewController.h; sourceTree = "<group>"; };
+		789015A218A6301F003D9F49 /* WLAItemsManipulationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemsManipulationListViewController.m; sourceTree = "<group>"; };
+		789015A418A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemsManipulationFeaturesFactory.h; sourceTree = "<group>"; };
+		789015A518A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemsManipulationFeaturesFactory.m; sourceTree = "<group>"; };
+		789015AE18A653A1003D9F49 /* WLAItemByPathViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemByPathViewController.h; sourceTree = "<group>"; };
+		789015AF18A653A1003D9F49 /* WLAItemByPathViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemByPathViewController.m; sourceTree = "<group>"; };
+		789015B118A653B0003D9F49 /* WLAItemByIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemByIDViewController.h; sourceTree = "<group>"; };
+		789015B218A653B0003D9F49 /* WLAItemByIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemByIDViewController.m; sourceTree = "<group>"; };
+		789015B418A653C0003D9F49 /* WLAItemChildrenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemChildrenViewController.h; sourceTree = "<group>"; };
+		789015B518A653C0003D9F49 /* WLAItemChildrenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemChildrenViewController.m; sourceTree = "<group>"; };
+		789015B718A653D3003D9F49 /* WLAItemCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemCreateViewController.h; sourceTree = "<group>"; };
+		789015B818A653D3003D9F49 /* WLAItemCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemCreateViewController.m; sourceTree = "<group>"; };
+		789015BA18A653DF003D9F49 /* WLAItemDeleteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAItemDeleteViewController.h; sourceTree = "<group>"; };
+		789015BB18A653DF003D9F49 /* WLAItemDeleteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAItemDeleteViewController.m; sourceTree = "<group>"; };
+		789015F118A66565003D9F49 /* WLABaseItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLABaseItemViewController.h; sourceTree = "<group>"; };
+		789015F218A66565003D9F49 /* WLABaseItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLABaseItemViewController.m; sourceTree = "<group>"; };
 		78AE2D9C18113AF100FF116D /* WLAAlertsHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAAlertsHelper.h; sourceTree = "<group>"; };
 		78AE2D9D18113AF100FF116D /* WLAAlertsHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAAlertsHelper.m; sourceTree = "<group>"; };
 		78AE2D9F18117E1F00FF116D /* WLAMediaItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLAMediaItemsViewController.h; sourceTree = "<group>"; };
@@ -157,8 +181,12 @@
 		78CD7890181695F60046EA1F /* WLAPathHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLAPathHelper.m; sourceTree = "<group>"; };
 		78CD78C71816A3590046EA1F /* imagesSourceAndLicenceInfo */ = {isa = PBXFileReference; lastKnownFileType = text; path = imagesSourceAndLicenceInfo; sourceTree = "<group>"; };
 		78CD78CC1816A5270046EA1F /* large_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = large_image.jpg; sourceTree = "<group>"; };
-		78F649CB181A627F0091136F /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
-		78F64A08181AB9D90091136F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		78CF10CF18B260250050A664 /* WLASettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLASettingsViewController.h; sourceTree = "<group>"; };
+		78CF10D018B260250050A664 /* WLASettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLASettingsViewController.m; sourceTree = "<group>"; };
+		78DDEE7B18D7211800DC81AD /* SitecoreMobileJavaScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileJavaScript.framework; sourceTree = "<group>"; };
+		78DDEE7C18D7211800DC81AD /* SitecoreMobileSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileSDK.framework; sourceTree = "<group>"; };
+		78DDEE7D18D7211800DC81AD /* SitecoreMobileUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SitecoreMobileUI.framework; sourceTree = "<group>"; };
+		78F64A08181AB9D90091136F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,14 +194,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78DDEE8018D7211800DC81AD /* SitecoreMobileUI.framework in Frameworks */,
 				7825D75418058537009030B5 /* libc++.dylib in Frameworks */,
 				7825D75218058531009030B5 /* libiconv.dylib in Frameworks */,
 				7825D75018058528009030B5 /* libstdc++.dylib in Frameworks */,
 				7825D74E1805851B009030B5 /* libsqlite3.dylib in Frameworks */,
 				7825D74C18058512009030B5 /* libz.dylib in Frameworks */,
 				7825D74A1805850A009030B5 /* libxml2.dylib in Frameworks */,
-				78F649CC181A627F0091136F /* SitecoreMobileSDK.framework in Frameworks */,
 				7825D747180584F7009030B5 /* EventKit.framework in Frameworks */,
+				78DDEE7E18D7211800DC81AD /* SitecoreMobileJavaScript.framework in Frameworks */,
 				7825D748180584F7009030B5 /* EventKitUI.framework in Frameworks */,
 				7825D744180584F1009030B5 /* AVFoundation.framework in Frameworks */,
 				7825D742180584EB009030B5 /* MapKit.framework in Frameworks */,
@@ -185,6 +214,7 @@
 				7825D736180584C2009030B5 /* CoreVideo.framework in Frameworks */,
 				7825D734180584BC009030B5 /* CoreMedia.framework in Frameworks */,
 				7825D732180584B7009030B5 /* CoreLocation.framework in Frameworks */,
+				78DDEE7F18D7211800DC81AD /* SitecoreMobileSDK.framework in Frameworks */,
 				7825D730180584B2009030B5 /* CoreMotion.framework in Frameworks */,
 				7825D72E180584AC009030B5 /* CFNetwork.framework in Frameworks */,
 				7825D72C1805849F009030B5 /* Social.framework in Frameworks */,
@@ -229,7 +259,9 @@
 		7825D6ED1805835D009030B5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78F649CB181A627F0091136F /* SitecoreMobileSDK.framework */,
+				78DDEE7B18D7211800DC81AD /* SitecoreMobileJavaScript.framework */,
+				78DDEE7C18D7211800DC81AD /* SitecoreMobileSDK.framework */,
+				78DDEE7D18D7211800DC81AD /* SitecoreMobileUI.framework */,
 				7825D75318058537009030B5 /* libc++.dylib */,
 				7825D75118058531009030B5 /* libiconv.dylib */,
 				7825D74F18058528009030B5 /* libstdc++.dylib */,
@@ -314,6 +346,8 @@
 			children = (
 				7825D7C218058DDA009030B5 /* WLAGlobalSettings.h */,
 				7825D7C318058DDA009030B5 /* WLAGlobalSettings.m */,
+				78CF10CF18B260250050A664 /* WLASettingsViewController.h */,
+				78CF10D018B260250050A664 /* WLASettingsViewController.m */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -323,6 +357,7 @@
 			children = (
 				78BEC0E9180C0227007BFED5 /* Base */,
 				783D941F18167501002087F9 /* Hybrid */,
+				789015A018A62FF5003D9F49 /* ItemsManipulation */,
 				7825D7C9180598DD009030B5 /* WLAMapViewController.h */,
 				7825D7CA180598DD009030B5 /* WLAMapViewController.m */,
 				781F4B3B1806D97700035AC3 /* WLAContactsViewController.h */,
@@ -341,8 +376,6 @@
 				7845439A180EB65C0078395E /* WLASharingViewController.m */,
 				7859DB6C180ED83A000F9AD9 /* WLAQRCodeViewController.h */,
 				7859DB6D180ED83A000F9AD9 /* WLAQRCodeViewController.m */,
-				78ADAF741810278100C73D93 /* WLAItemsViewController.h */,
-				78ADAF751810278100C73D93 /* WLAItemsViewController.m */,
 				78AE2D9F18117E1F00FF116D /* WLAMediaItemsViewController.h */,
 				78AE2DA018117E1F00FF116D /* WLAMediaItemsViewController.m */,
 			);
@@ -356,6 +389,37 @@
 				783D94211816751C002087F9 /* WLAItemsTableViewController.m */,
 			);
 			path = Hybrid;
+			sourceTree = "<group>";
+		};
+		789015A018A62FF5003D9F49 /* ItemsManipulation */ = {
+			isa = PBXGroup;
+			children = (
+				789015AD18A65382003D9F49 /* Features Implementation */,
+				789015A118A6301F003D9F49 /* WLAItemsManipulationListViewController.h */,
+				789015A218A6301F003D9F49 /* WLAItemsManipulationListViewController.m */,
+				789015A418A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.h */,
+				789015A518A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.m */,
+			);
+			path = ItemsManipulation;
+			sourceTree = "<group>";
+		};
+		789015AD18A65382003D9F49 /* Features Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				789015F118A66565003D9F49 /* WLABaseItemViewController.h */,
+				789015F218A66565003D9F49 /* WLABaseItemViewController.m */,
+				789015AE18A653A1003D9F49 /* WLAItemByPathViewController.h */,
+				789015AF18A653A1003D9F49 /* WLAItemByPathViewController.m */,
+				789015B118A653B0003D9F49 /* WLAItemByIDViewController.h */,
+				789015B218A653B0003D9F49 /* WLAItemByIDViewController.m */,
+				789015B418A653C0003D9F49 /* WLAItemChildrenViewController.h */,
+				789015B518A653C0003D9F49 /* WLAItemChildrenViewController.m */,
+				789015B718A653D3003D9F49 /* WLAItemCreateViewController.h */,
+				789015B818A653D3003D9F49 /* WLAItemCreateViewController.m */,
+				789015BA18A653DF003D9F49 /* WLAItemDeleteViewController.h */,
+				789015BB18A653DF003D9F49 /* WLAItemDeleteViewController.m */,
+			);
+			path = "Features Implementation";
 			sourceTree = "<group>";
 		};
 		78BEC0E9180C0227007BFED5 /* Base */ = {
@@ -475,21 +539,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789015A318A6301F003D9F49 /* WLAItemsManipulationListViewController.m in Sources */,
 				78454392180E80DD0078395E /* WLABaseNativeViewController.m in Sources */,
+				789015B918A653D3003D9F49 /* WLAItemCreateViewController.m in Sources */,
 				78BEC0EC180C0227007BFED5 /* WLABaseWebViewController.m in Sources */,
 				78BEC194180C21A8007BFED5 /* WLASwipeViewController.m in Sources */,
+				789015B318A653B0003D9F49 /* WLAItemByIDViewController.m in Sources */,
+				789015F318A66565003D9F49 /* WLABaseItemViewController.m in Sources */,
 				7859DB6E180ED83A000F9AD9 /* WLAQRCodeViewController.m in Sources */,
 				78AE2D9E18113AF100FF116D /* WLAAlertsHelper.m in Sources */,
 				7825D6FB1805835D009030B5 /* main.m in Sources */,
 				7845439B180EB65C0078395E /* WLASharingViewController.m in Sources */,
+				789015BC18A653DF003D9F49 /* WLAItemDeleteViewController.m in Sources */,
 				78BEC197180C3215007BFED5 /* WLAAuthViewController.m in Sources */,
+				789015B018A653A1003D9F49 /* WLAItemByPathViewController.m in Sources */,
 				7825D6FF1805835D009030B5 /* WLAAppDelegate.m in Sources */,
 				78AE2DA118117E1F00FF116D /* WLAMediaItemsViewController.m in Sources */,
 				7825D7C7180597EC009030B5 /* WLAFeaturesFactory.m in Sources */,
 				783D94221816751C002087F9 /* WLAItemsTableViewController.m in Sources */,
 				7825D7CB180598DD009030B5 /* WLAMapViewController.m in Sources */,
-				78ADAF761810278100C73D93 /* WLAItemsViewController.m in Sources */,
+				789015A618A63203003D9F49 /* WLAItemsManipulationFeaturesFactory.m in Sources */,
+				789015B618A653C0003D9F49 /* WLAItemChildrenViewController.m in Sources */,
 				78454395180E82CA0078395E /* WLAMainUIFactory.m in Sources */,
+				78CF10D218B260250050A664 /* WLASettingsViewController.m in Sources */,
 				78BEC191180C1CBB007BFED5 /* WLAHardwareViewController.m in Sources */,
 				78BEC124180C1136007BFED5 /* WLAImageViewController.m in Sources */,
 				78CD7891181695F60046EA1F /* WLAPathHelper.m in Sources */,
@@ -640,9 +712,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					.,
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/WhiteLabelApp,
-					/Volumes/Sitecore/Sources/src/app/WhiteLabelApp,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhiteLabelApp/WhiteLabelApp-Prefix.pch";
@@ -664,9 +734,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					.,
-					/Volumes/Sitecore/Sources/SVNMobileSDK/app/WhiteLabelApp,
-					/Volumes/Sitecore/Sources/src/app/WhiteLabelApp,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhiteLabelApp/WhiteLabelApp-Prefix.pch";

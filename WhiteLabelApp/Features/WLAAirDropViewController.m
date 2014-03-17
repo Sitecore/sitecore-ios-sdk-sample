@@ -28,19 +28,25 @@
 
 -(void)readImageAndShare:(id)sender
 {
-    SCApiContext* context = [SCApiContext contextWithHost:WLAWebApiHostName
-                                                    login:WLAUserName
-                                                 password:WLAUserPassword];
-    context.defaultDatabase = @"web";
-    context.defaultSite = WLASitecoreShellSite;
+    NSString *hostPath = [WLAGlobalSettings sharedInstance].WLAWebApiHostName;
+    NSString *userName = [WLAGlobalSettings sharedInstance].WLAUserName;
+    NSString *password = [WLAGlobalSettings sharedInstance].WLAUserPassword;
+    NSString *sitePath = [WLAGlobalSettings sharedInstance].WLASitecoreShellSite;
+    NSString *database = [WLAGlobalSettings sharedInstance].WLADatabase;
     
-    SCItemsReaderRequest* request = [SCItemsReaderRequest new];
+    SCApiSession* context = [SCApiSession sessionWithHost:hostPath
+                                                    login:userName
+                                                 password:password];
+    context.defaultDatabase = database;
+    context.defaultSite = sitePath;
+    
+    SCReadItemsRequest* request = [SCReadItemsRequest new];
     request.request = @"/sitecore/content/WhiteLabelApplication/DataSource/Image/ItemWithImage";
-    request.requestType = SCItemReaderRequestItemPath;
+    request.requestType = SCReadItemRequestItemPath;
     request.fieldNames = [NSSet setWithObject: @"Image"];
-    request.flags = SCItemReaderRequestReadFieldsValues;
+    request.flags = SCReadItemRequestReadFieldsValues;
     
-    [context itemsReaderWithRequest: request ](^(id result, NSError* error)
+    [context readItemsOperationWithRequest: request ](^(id result, NSError* error)
     {
         SCItem* item = [result lastObject];
         UIImage* image = [item fieldValueWithName: @"Image"];

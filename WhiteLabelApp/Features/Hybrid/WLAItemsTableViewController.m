@@ -15,7 +15,7 @@
 
 @implementation WLAItemsTableViewController
 {
-    SCApiContext* context;
+    SCApiSession* context;
     
     UITableView *itemsTableView;
     NSArray *itemsList;
@@ -25,11 +25,18 @@
 {
     [super viewDidLoad];
 
-    self->context = [SCApiContext contextWithHost:WLAWebApiHostName
-                                            login:WLAUserName
-                                         password:WLAUserPassword];
-    self->context.defaultDatabase = @"web";
-    self->context.defaultSite = WLASitecoreShellSite;
+    NSString *hostPath = [WLAGlobalSettings sharedInstance].WLAWebApiHostName;
+    NSString *userName = [WLAGlobalSettings sharedInstance].WLAUserName;
+    NSString *password = [WLAGlobalSettings sharedInstance].WLAUserPassword;
+    NSString *sitePath = [WLAGlobalSettings sharedInstance].WLASitecoreShellSite;
+    NSString *database = [WLAGlobalSettings sharedInstance].WLADatabase;
+    
+    self->context = [SCApiSession sessionWithHost:hostPath
+                                            login:userName
+                                         password:password];
+    
+    self->context.defaultDatabase = database;
+    self->context.defaultSite = sitePath;
     [self downloadItemsList];
 }
 
@@ -43,11 +50,18 @@
 
 -(void)downloadItemsList
 {
-    [context childrenReaderWithItemPath:[WLAPathHelper wlaPathToItem:@"SwipePages"]](^(id result, NSError
+    [context readChildrenOperationForItemPath:[WLAPathHelper wlaPathToItem:@"SwipePages"]](^(NSArray *result, NSError
                                                                           *error)
     {
-        self->itemsList = result;
-        [self->itemsTableView reloadData];
+        if ([result count]>0)
+        {
+            self->itemsList = result;
+            [self->itemsTableView reloadData];
+        }
+        else
+        {
+            [WLAAlertsHelper showErrorAlertWithText:NSLocalizedString(@"Content is not available", nil)];
+        }
     });
     
 }

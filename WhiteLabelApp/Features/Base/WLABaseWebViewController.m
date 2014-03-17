@@ -22,10 +22,12 @@
 
 -(void)showWebViewWithFeature
 {
+    NSString *homstPath = [WLAGlobalSettings sharedInstance].WLAWebApiHostName;
+    
     SCWebView* webView = [[SCWebView alloc] initWithFrame:self.view.bounds];
     webView.autoresizingMask = UIViewAutoresizingFlexibleWidth |
     UIViewAutoresizingFlexibleHeight;
-    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", WLAWebApiHostName, self.featurePath]];
+    NSURL* url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", homstPath, self.featurePath]];
     [webView loadURL:url];
     [self.view addSubview:webView];
 }

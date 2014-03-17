@@ -5,36 +5,48 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>655DBC98-F79B-4873-9BF8-E15C02981AE9</string>
+	<string>D61D05AA-98F4-4A63-8805-0FEAF724EE05</string>
 	<key>IDESourceControlProjectName</key>
 	<string>WhiteLabelApp</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>42BA3E06-55CF-48FA-B160-47648E95297B</key>
+		<key>45103251-ED53-4316-9CC0-C9127DD06BD1</key>
 		<string>https://github.com/Sitecore/sitecore-ios-sdk.git</string>
+		<key>ABB6F07C-BE4A-4A7E-9D20-809D42427E52</key>
+		<string>https://github.com/Sitecore/sitecore-ios-sdk-sample.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>src/app/WhiteLabelApp/WhiteLabelApp.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>42BA3E06-55CF-48FA-B160-47648E95297B</key>
+		<key>45103251-ED53-4316-9CC0-C9127DD06BD1</key>
 		<string>../../../../..</string>
+		<key>ABB6F07C-BE4A-4A7E-9D20-809D42427E52</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Sitecore/sitecore-ios-sdk.git</string>
+	<string>https://github.com/Sitecore/sitecore-ios-sdk-sample.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>42BA3E06-55CF-48FA-B160-47648E95297B</string>
+	<string>45103251-ED53-4316-9CC0-C9127DD06BD1</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>42BA3E06-55CF-48FA-B160-47648E95297B</string>
+			<string>45103251-ED53-4316-9CC0-C9127DD06BD1</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Sources</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ABB6F07C-BE4A-4A7E-9D20-809D42427E52</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WhiteLabelApp</string>
 		</dict>
 	</array>
 </dict>

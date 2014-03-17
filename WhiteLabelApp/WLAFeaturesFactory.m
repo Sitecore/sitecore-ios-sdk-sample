@@ -16,33 +16,30 @@
 #import "WLAAirDropViewController.h"
 #import "WLASharingViewController.h"
 #import "WLAQRCodeViewController.h"
-#import "WLAItemsViewController.h"
+#import "WLAItemsManipulationListViewController.h"
 #import "WLAMediaItemsViewController.h"
 #import "WLAItemsTableViewController.h"
 
 @implementation WLAFeaturesFactory
-{
-    NSDictionary *features;
-}
 
 -(id)init
 {
     if (self = [super init])
     {
-        features =
+        self.features =
         @{
-             @"Map"                         :[WLAMapViewController          class],
-             @"Contacts"                    :[WLAContactsViewController     class],
-             @"Image"                       :[WLAImageViewController        class],
-             @"Hardware"                    :[WLAHardwareViewController     class],
-             @"Swipe"                       :[WLASwipeViewController        class],
-             @"Authentication"              :[WLAAuthViewController         class],
-             @"AirDrop"                     :[WLAAirDropViewController      class],
-             @"Sharing"                     :[WLASharingViewController      class],
-             @"QRCode reader"               :[WLAQRCodeViewController       class],
-             @"Items manipulation"          :[WLAItemsViewController        class],
-             @"Media items manipulation"    :[WLAMediaItemsViewController   class],
-             @"Hybrid model"                :[WLAItemsTableViewController   class],
+             @"Map"                         :[WLAMapViewController                   class],
+             @"Contacts"                    :[WLAContactsViewController              class],
+             @"Image"                       :[WLAImageViewController                 class],
+             @"Hardware"                    :[WLAHardwareViewController              class],
+             @"Swipe"                       :[WLASwipeViewController                 class],
+             @"Authentication"              :[WLAAuthViewController                  class],
+             @"AirDrop"                     :[WLAAirDropViewController               class],
+             @"Sharing"                     :[WLASharingViewController               class],
+             @"QRCode reader"               :[WLAQRCodeViewController                class],
+             @"Items manipulation"          :[WLAItemsManipulationListViewController class],
+             @"Media items manipulation"    :[WLAMediaItemsViewController            class],
+             @"Hybrid model"                :[WLAItemsTableViewController            class],
         };
     }
     
@@ -51,7 +48,7 @@
 
 -(NSArray *)featuresList
 {
-    return [[features allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
+    return [[self.features allKeys] sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2)
     {
         return [obj1 caseInsensitiveCompare:obj2];
     }];
@@ -59,7 +56,7 @@
 
 -(UIViewController *)featureViewControllerForKey:(NSString *)key
 {
-    Class cls = [features objectForKey:key];
+    Class cls = [self.features objectForKey:key];
 
     UIViewController *featureController = [[cls  alloc] initWithNibName:nil bundle:nil];
     

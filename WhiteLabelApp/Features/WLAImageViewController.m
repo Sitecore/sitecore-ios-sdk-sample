@@ -19,4 +19,9 @@
     return [WLAPathHelper wlaPathToItem:@"Image.aspx"];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationSlide];
+}
+
 @end

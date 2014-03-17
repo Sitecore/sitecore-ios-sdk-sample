@@ -21,6 +21,7 @@
     
     [result setPlaceholder:placeholderText];
     [result setText:text];
+    [result setClearButtonMode:UITextFieldViewModeAlways];
     
     return result;
 }

@@ -11,6 +11,7 @@
 @interface WLAFeaturesFactory : NSObject
 
 @property(nonatomic) NSArray *featuresList;
+@property(nonatomic) NSDictionary *features;
 
 -(UIViewController *)featureViewControllerForKey:(NSString *)key;
 

@@ -14,7 +14,7 @@
 
 @implementation WLAMediaItemsViewController
 {
-    SCApiContext *_apiContext;
+    SCApiSession *_apiContext;
     SCCancelAsyncOperation _cancelOperation;
     SCItem* _media_item;
     
@@ -35,12 +35,18 @@
 
      self->_uploadingIsInProgress = NO;
     
-    self->_apiContext = [SCApiContext contextWithHost:WLAWebApiHostName
-                                                login:WLAUserName
-                                             password:WLAUserPassword];
+    NSString *hostPath = [WLAGlobalSettings sharedInstance].WLAWebApiHostName;
+    NSString *userName = [WLAGlobalSettings sharedInstance].WLAUserName;
+    NSString *password = [WLAGlobalSettings sharedInstance].WLAUserPassword;
+    NSString *sitePath = [WLAGlobalSettings sharedInstance].WLASitecoreShellSite;
+    NSString *database = [WLAGlobalSettings sharedInstance].WLADatabase;
+    
+    self->_apiContext = [SCApiSession sessionWithHost:hostPath
+                                                login:userName
+                                             password:password];
 
-    self->_apiContext.defaultDatabase = @"web";
-    self->_apiContext.defaultSite = WLASitecoreShellSite;
+    self->_apiContext.defaultDatabase = database;
+    self->_apiContext.defaultSite = sitePath;
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -139,7 +145,7 @@
         }
     };
 
-    SCCreateMediaItemRequest* request = [SCCreateMediaItemRequest new];
+    SCUploadMediaItemRequest* request = [SCUploadMediaItemRequest new];
     
     request.fileName      = [NSString stringWithFormat:@"%@.jpg", [self imageFileName]];
     request.itemName      = @"TestMediaItem";
@@ -149,7 +155,7 @@
     request.contentType   = @"image/jpg";
     request.folder        = @"/WhiteLabel/BigImageTestData";
     
-    SCExtendedAsyncOp loader = [self->_apiContext.extendedApiContext mediaItemCreatorWithRequest:request];
+    SCExtendedAsyncOp loader = [self->_apiContext.extendedApiSession uploadMediaOperationWithRequest:request];
     
     self->_cancelOperation = loader(progressCallback, cancelCallback, doneCallback);
 
