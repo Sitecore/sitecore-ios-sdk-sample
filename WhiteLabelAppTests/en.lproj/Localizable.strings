@@ -6,17 +6,17 @@
   Copyright (c) 2013 Sitecore. All rights reserved.
 */
 "Drop" = "Drop";
-"Image wasn't received from the server" = "Image wasn't received from the server";
+"Image wasn't received from the server" = "Image was not received from the server";
 "Message" = "Message";
 "Ok" = "Ok";
 "Error" = "Error";
 "domain\\login" = "domain\\login";
 "password" = "password";
 "site" = "site";
-"Try authentication" = "Try authentication";
-"This user is exists" = "This user is exists";
-"This user does not exists" = "This user does not exists";
-"Item %@ was successfully read" = "Item %@ was successfully read";
+"Try authentication" = "Send auth request";
+"This user is exists" = "Authentication successfull. This user exists";
+"This user does not exists" = "Authentication failed. This user does not exist or the password is incorrect.";
+"Item %@ was successfully read" = "Item %@ has been successfully read";
 "type item id here" = "type item id here";
 "Item by id" = "Item by id";
 "Please fill path field first" = "Please fill path field first";
@@ -29,21 +29,21 @@
 "Please fill path field first" = "Please fill path field first";
 "The item children:\n%@" = "The item children:\n%@";
 "Item has no children" = "Item has no children";
-"Item not exists" = "Item not exists";
+"Item not exists" = "Item does not exist";
 "type item title here" = "type item title here";
 "type item text here" = "type item text here";
 "type path to create item" = "type path to create item";
 "Create item" = "Create item";
 "Edit item" = "Edit item";
-"Item was successfully created" = "Item was successfully created";
+"Item was successfully created" = "Item has been successfully created";
 "Create item first" = "Create item first";
 "Type new title, please" = "Type new title, please";
-"Item was successfully changed" = "Item was successfully changed";
+"Item was successfully changed" = "Item has been successfully changed";
 "type item id here" = "type item id here";
 "Remove item" = "Remove item";
 "Please fill path field first" = "Please fill path field first";
-"Item not exists" = "Item not exists";
-"Item was successfully removed" = "Item was successfully removed";
+"Item not exists" = "Item does not exist";
+"Item was successfully removed" = "Item has been successfully removed";
 "Alert" = "Alert";
 "image data processing, please wait" = "image data processing, please wait";
 "Upload image" = "Upload image";
@@ -58,5 +58,5 @@
 "home item ID" = "home item ID";
 "data source root" = "data source root";
 "Content is not available" = "Content is not available";
-"ITEM_WAS_NOT_FOUND" = "Item was not found";
+"ITEM_WAS_NOT_FOUND" = "Item not found";
 "ITEM_PATH_IS_INVALID" = "Item path is invalid";
