@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WLABaseNativeViewController : UIViewController
+@interface WLABaseNativeViewController : UIViewController<UITextFieldDelegate>
 
 @end

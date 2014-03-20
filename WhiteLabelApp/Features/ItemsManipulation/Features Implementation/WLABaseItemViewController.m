@@ -84,12 +84,6 @@ static CGFloat keyboardHeight = 216.f;
     }
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
-
 -(void)keyboardWillShow:(id)sender
 {
     CGRect frame = self.view.bounds;

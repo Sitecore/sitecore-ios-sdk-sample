@@ -28,16 +28,19 @@
     self->_userName = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 20, 200, 50)
                                                   placeholder:NSLocalizedString(@"domain\\login", nil)
                                                          text:userName];
+    self->_userName.delegate = self;
     [self.view addSubview:self->_userName];
     
     self->_password = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 80, 200, 50)
                                                   placeholder:NSLocalizedString(@"password", nil)
                                                          text:password];
+    self->_password.delegate = self;
     [self.view addSubview:self->_password];
     
     self->_site = [WLAMainUIFactory wlaTextFieldWithFrame:CGRectMake(20, 140, 200, 50)
                                               placeholder:NSLocalizedString(@"site", nil)
                                                      text:sitePath];
+    self->_site.delegate = self;
     [self.view addSubview:self->_site];
     
     UIButton *correctAuthButton = [WLAMainUIFactory wlaButtonWithFrame:CGRectMake(20, 220, 200, 50)
