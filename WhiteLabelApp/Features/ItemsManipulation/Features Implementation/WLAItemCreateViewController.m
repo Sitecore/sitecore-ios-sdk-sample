@@ -114,7 +114,7 @@
     
     textField.rawValue = self->_textField.text;
     
-    [self->_createdItem saveItem](^(SCItem *editedItem, NSError *error)
+    [self->_createdItem saveItemOperation](^(SCItem *editedItem, NSError *error)
                                   {
                                       if (!error)
                                       {

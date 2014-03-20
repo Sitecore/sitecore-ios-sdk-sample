@@ -15,7 +15,8 @@
 -(NSString *)WLAWebApiHostName
 {
     if (!self->_WLAWebApiHostName)
-        return @"http://mobiledev1ua1.dk.sitecore.net:7119";
+        //http://mobiledev1ua1.dk.sitecore.net:7119/
+        return @"http://host_name.com:80";
     
     return self->_WLAWebApiHostName;
 }
@@ -47,7 +48,7 @@
 -(NSString *)WLAHomeItemId
 {
     if (!self->_WLAHomeItemId)
-        return @"{110D559F-DEA5-42EA-9C1C-8A5DF7E70EF9}";
+        return @"{039DE578-616A-4E63-AFA4-0AAA3FE7CBAF}";
     
     return self->_WLAHomeItemId;
 }

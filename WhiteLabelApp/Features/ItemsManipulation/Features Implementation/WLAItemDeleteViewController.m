@@ -45,20 +45,20 @@
     if ( [self->_idField.text length] > 0 )
     {
         [self.context readItemOperationForItemId:self->_idField.text](^(SCItem *result, NSError *error)//read item to cache
-                                                               {
-                                                                   if (error)
-                                                                   {
-                                                                       [WLAAlertsHelper showErrorAlertWithError:error];
-                                                                   }
-                                                                   else
-                                                                   {
-                                                                       [weakSelf deleteItem:result];
-                                                                   }
-                                                               });
+               {
+                   if (error)
+                   {
+                       [WLAAlertsHelper showErrorAlertWithError:error];
+                   }
+                   else
+                   {
+                       [weakSelf deleteItem:result];
+                   }
+               });
     }
     else
     {
-        [WLAAlertsHelper showErrorAlertWithText:NSLocalizedString(@"Please fill path field first", nil)];
+        [WLAAlertsHelper showErrorAlertWithText:NSLocalizedString(@"Please fill id field first", nil)];
     }
 }
 
@@ -70,7 +70,7 @@
         return;
     }
     
-    [item removeItem](^(SCItem *removedItem, NSError *error)
+    [item removeItemOperation](^(SCItem *removedItem, NSError *error)
                                     {
                                         if (!error)
                                         {

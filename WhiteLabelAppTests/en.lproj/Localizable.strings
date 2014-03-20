@@ -60,3 +60,4 @@
 "Content is not available" = "Content is not available";
 "ITEM_WAS_NOT_FOUND" = "Item not found";
 "ITEM_PATH_IS_INVALID" = "Item path is invalid";
+"Please fill id field first" = "Please fill id field first";
