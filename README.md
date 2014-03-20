@@ -3,7 +3,7 @@ Sitecore Sample App - SDK  for iOS
 
 The Sitecore Sample App - SDK for IOS is a simple application designed to help the developer understand the available features within the SDK for IOS framework. The application includes the following feature examples:
 
- * Authorisation (with a Sitecore instance)
+ * Authentication (with a Sitecore instance)
  * Mapping (Apple Maps and Path-finding) 
  * Web View (example integration with a Sitecore instance)
  *  Manipulating Sitecore content through the Sitecore Item Web API
