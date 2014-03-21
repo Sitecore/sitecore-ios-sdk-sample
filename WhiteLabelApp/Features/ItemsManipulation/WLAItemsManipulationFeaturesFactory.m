@@ -23,7 +23,7 @@
         @{
           @"Read item by path"    :[WLAItemByPathViewController    class],
           @"Read item by ID"      :[WLAItemByIDViewController      class],
-          @"Read item childrens"  :[WLAItemChildrenViewController class],
+          @"Read item children"  :[WLAItemChildrenViewController class],
           @"Create/Edit item"     :[WLAItemCreateViewController    class],
           @"Delete item"          :[WLAItemDeleteViewController    class],
           };
