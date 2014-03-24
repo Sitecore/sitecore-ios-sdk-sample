@@ -48,7 +48,7 @@
     }
     else
     {
-        [WLAAlertsHelper showErrorAlertWithText:NSLocalizedString(@"Please fill path field first", nil)];
+        [WLAAlertsHelper showErrorAlertWithText:NSLocalizedString(@"Please fill id field first", nil)];
     }
 }
 

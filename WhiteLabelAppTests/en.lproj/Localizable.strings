@@ -19,14 +19,11 @@
 "Item %@ was successfully read" = "Item %@ has been successfully read";
 "type item id here" = "type item id here";
 "Item by id" = "Item by id";
-"Please fill path field first" = "Please fill path field first";
 "type item path here" = "type item path here";
 "Item by path" = "Item by path";
 "Item not found" = "Item not found";
-"Please fill path field first" = "Please fill path field first";
 "type item id here" = "type item id here";
 "Read item children" = "Read item children";
-"Please fill path field first" = "Please fill path field first";
 "The item children:\n%@" = "The item children:\n%@";
 "Item has no children" = "Item has no children";
 "Item not exists" = "Item does not exist";
