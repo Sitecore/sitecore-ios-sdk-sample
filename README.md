@@ -18,7 +18,7 @@ The Sitecore Sample App - SDK for IOS is a simple application designed to help t
 
 The application supports both IOS 6 and IOS 7, and can request content from Sitecore efficiently and securely via Sitecore Item Web API RESTful web service. It is expected that for the Item Manipulation examples to work, the developer has a Sitecore instance setup configured with the Item Web API module installed.
 
-Documentation for the SDK, including installation and developer guides can be found on the [Sitecore Developer Network (SDN)][3]
+Documentation for the SDK, including installation and developer guides can be found on the [Sitecore Developer Network (SDN)][1]
 
 Please note that this application is for demonstration purposes only, and is not recommended for production, you should setup and perform your own tests against any apps developed on the SDK framework.
 
@@ -38,5 +38,5 @@ SITECORE SHARED SOURCE LICENSE
 
  [1]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK/Sitecore%20Mobile%20SDK%20for%20iOS.aspx
  [2]: http://sdn.sitecore.net/Products/Sitecore%20Item%20Web%20API.aspx
- [3]: http://sdn.sitecore.net/Products/Sitecore%20Mobile%20SDK.aspx
+
  [4]: https://github.com/Sitecore/sitecore-ios-sdk
