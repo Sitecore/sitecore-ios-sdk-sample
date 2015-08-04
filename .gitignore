@@ -1,7 +1,6 @@
-
-/todo1.txt
-._*
 *.xccheckout
 *.xcuserstate
+/todo1.txt
+._*
 /src/deploymen
 build
